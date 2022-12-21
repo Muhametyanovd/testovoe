@@ -59,9 +59,11 @@ if __name__ == '__main__':
     try:
         text: str = textinput()
         key: str = keyinput()
+        # Если ключ короче текста, удлиняем ключ, чтобы не потерять данные
         if len(key) < len(text):
             while len(key) < len(text):
                 key += "".join(key_char for key_char in key)
+        # Если ключ длиннее текста, подгоняем его длину до длины текста функцией
         if len(text) < len(key):
             key = equallen(key, text)
             print('Ключ короче текста. Новый ключ:', key)
